@@ -6,25 +6,21 @@ Em aplicações que escalam, como os projetos de automação que desenvolvo na V
 
  Tecnologias que utilizei:
 Node.js & Express: Base do servidor backend.
-
 TypeScript: Tipagem estrita para evitar erros bobos em produção e facilitar a manutenção.
-
 Redis (Upstash): Utilizado para persistência em cache e contagem atômica de requisições.
-
 Dotenv: Gestão de variáveis de ambiente para manter as credenciais seguras e fora do código-fonte.
 
  Como rodar o projeto?
+ 
 Se quiser testar aí, o processo é simples:
 
 Clone o repositório.
-
 Rode um npm install para baixar as dependências.
-
 Crie um arquivo .env na raiz seguindo o modelo do .env.example.
-
 Inicie o servidor em modo de desenvolvimento:
 
 Bash
-npm run dev
-🧠 O que aprendi fazendo isso
+-npm run dev-
+
+O que aprendi fazendo isso?
 O maior desafio não foi só codar o middleware, mas garantir a resiliência (Fail-Open). Se o banco de dados Redis cair por qualquer motivo, a API continua funcionando em vez de travar o usuário, priorizando a disponibilidade do sistema.

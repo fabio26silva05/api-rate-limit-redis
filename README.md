@@ -19,8 +19,23 @@ Rode um npm install para baixar as dependências.
 Crie um arquivo .env na raiz seguindo o modelo do .env.example.
 Inicie o servidor em modo de desenvolvimento:
 
-Bash
--npm run dev-
+Como Testar?
+
+1. Inicie o servidor:
+```bash
+npm run dev
+```
+
+2. Abra o PowerShell/Terminal e execute (11 vezes rapidamente):
+```bash
+curl http://localhost:3000
+```
+
+**Resultado esperado:**
+- Primeiras 10 vezes: Vê a mensagem "SentinelRate Guard está protegendo a API"
+- 11ª vez: Recebe erro `429` com mensagem `{"error":"Muitas requisições. Tente em 1 minuto."}`
+
+Isso prova que o rate limit está funcionando!
 
 O que aprendi fazendo isso?
 O maior desafio não foi só codar o middleware, mas garantir a resiliência (Fail-Open). Se o banco de dados Redis cair por qualquer motivo, a API continua funcionando em vez de travar o usuário, priorizando a disponibilidade do sistema.
